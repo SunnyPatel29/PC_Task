@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pcApp">
+<head>
+  <title>Personal Capitol App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="angular.js"></script>
+</head>
+<body>
+
+  
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Personal Capitol</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" ng-controller="pcCtrl">
+      <form>
+        <div class="input-group">
+          <input type="text" class="form-control input-lg" ng-keyup="getName(search)"  ng-model="search" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn-lg btn-default" type="submit" ng-click="getData()"><i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      <br><br>
+    <table class="table table-striped">
+          <tr>
+            <th>NAME</th>
+            <th>TYPE</th>
+            <th>LINK</th>
+          </tr>
+          <tr ng-repeat="product in products | filter : search">
+            <td>{{product.name}}</td>
+            <td>{{product.type}}</td>
+            <td><a href="{{product.url}}">{{product.url}}</a></td>
+          </tr>
+    </table>
+
+    </div>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>

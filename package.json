@@ -1,0 +1,13 @@
+{
+  "name": "personalcapitol",
+  "version": "1.0.0",
+  "description": "A SPA in angular for searching of financial institute",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Sunny Patel",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4"
+  }
+}
